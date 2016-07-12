@@ -14,7 +14,7 @@ def index():
     data['host']      = request.headers.get('HOST').lower()
     data['directory'] = request.headers.get('X-DOCROOT').lower() if request.headers.get('X-DOCROOT') else None
     data['port']      = request.headers.get('X-PORT', "80")
-    data['reload']    = request.headers.get('X-RELOAD', true)
+    data['reload']    = request.headers.get('X-RELOAD', True)
     
     if data['host'].startswith("www."):
         data['host'] = data.get('host').replace("www.", "")
